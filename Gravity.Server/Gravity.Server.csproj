@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Gravity.Server</RootNamespace>
     <AssemblyName>Gravity.Server</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -22,6 +22,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Use64BitIISExpress />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,25 +43,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="OwinFramework.Pages.Core">
-      <HintPath>..\packages\Owin.Framework.Pages.Core\lib\net45\OwinFramework.Pages.Core.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ui\Assets\drawing.css" />
@@ -277,7 +274,29 @@
   <ItemGroup>
     <Content Include="config.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Ioc.Modules.Ninject">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Ninject">
+      <Version>3.3.6</Version>
+    </PackageReference>
+    <PackageReference Include="Owin.Framework.Pages.Core">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Owin.Framework.Pages.DebugMiddleware">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Owin.Framework.Pages.Framework">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Owin.Framework.Pages.Html">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Owin.Framework.Pages.Restful">
+      <Version>1.4.3</Version>
+    </PackageReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
